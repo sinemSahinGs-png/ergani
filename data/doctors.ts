@@ -1,0 +1,88 @@
+import type { Doctor } from "@/types";
+
+export const doctors: Doctor[] = [
+  {
+    id: "1",
+    slug: "ayse-yilmaz",
+    name: "Uzm. Dr. Ayşe Yılmaz",
+    title: "Aile Hekimi",
+    unit: "1. Birim",
+    unitNumber: 1,
+    bio: "Dr. Ayşe Yılmaz, aile hekimliği alanında uzun yıllardır hizmet vermektedir. Bebek ve çocuk izlemleri, gebe takibi ve kronik hastalık yönetiminde deneyimlidir. Hastalarıyla güven temelli, anlaşılır iletişim kurmayı esas alır.",
+    shortBio:
+      "Bebek–çocuk izlemleri ve kronik hastalık takibi alanında deneyimli aile hekimi.",
+    workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    workingHours: "08.00–17.00",
+    services: [
+      "Bebek ve çocuk izlemleri",
+      "Kronik hastalık takibi",
+      "Aşı uygulamaları",
+      "Koruyucu sağlık danışmanlığı",
+    ],
+    image: "/images/doctors/doctor-1.jpg",
+    initials: "AY",
+  },
+  {
+    id: "2",
+    slug: "mehmet-kaya",
+    name: "Uzm. Dr. Mehmet Kaya",
+    title: "Aile Hekimi",
+    unit: "2. Birim",
+    unitNumber: 2,
+    bio: "Dr. Mehmet Kaya, koruyucu hekimlik ve erişkin muayene hizmetlerinde görev almaktadır. Hipertansiyon, diyabet ve kanser tarama programlarında aktif olarak yer alır. Toplum sağlığını güçlendiren bilgilendirmeyi önemser.",
+    shortBio:
+      "Erişkin sağlığı, hipertansiyon ve diyabet takibi konularında uzmanlaşmış aile hekimi.",
+    workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    workingHours: "08.00–17.00",
+    services: [
+      "Erişkin muayene",
+      "Kanser taramaları",
+      "Diyabet ve hipertansiyon takibi",
+      "Sigara bırakma danışmanlığı",
+    ],
+    image: "/images/doctors/doctor-2.jpg",
+    initials: "MK",
+  },
+  {
+    id: "3",
+    slug: "zeynep-demir",
+    name: "Uzm. Dr. Zeynep Demir",
+    title: "Aile Hekimi",
+    unit: "3. Birim",
+    unitNumber: 3,
+    bio: "Dr. Zeynep Demir, gebe ve lohusa izlemleri ile kadın sağlığı alanında yoğunlaşmıştır. Aile planlaması danışmanlığı ve rahim ağzı kanseri tarama süreçlerinde hastalarına rehberlik eder.",
+    shortBio:
+      "Gebe–lohusa izlemleri ve aile planlaması danışmanlığında deneyimli aile hekimi.",
+    workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    workingHours: "08.00–17.00",
+    services: [
+      "Gebe ve lohusa izlemleri",
+      "Aile planlaması danışmanlığı",
+      "Rahim ağzı kanseri taraması",
+      "Beslenme danışmanlığı",
+    ],
+    image: "/images/doctors/doctor-3.jpg",
+    initials: "ZD",
+  },
+  {
+    id: "4",
+    slug: "ali-celik",
+    name: "Uzm. Dr. Ali Çelik",
+    title: "Aile Hekimi",
+    unit: "4. Birim",
+    unitNumber: 4,
+    bio: "Dr. Ali Çelik, aşı uygulamaları ve çocuk sağlığı takibinde görev yapmakta; aynı zamanda erkek sağlığı ve koruyucu taramalarda hastalarını bilgilendirmektedir.",
+    shortBio:
+      "Aşı programları ve koruyucu sağlık hizmetlerinde aktif görev alan aile hekimi.",
+    workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    workingHours: "08.00–17.00",
+    services: [
+      "Aşı uygulamaları",
+      "Bebek izlemleri",
+      "Koruyucu sağlık",
+      "Kronik hastalık takibi",
+    ],
+    image: "/images/doctors/doctor-4.jpg",
+    initials: "AÇ",
+  },
+];

@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" fill="none">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7F9BC4"/>
+      <stop offset="38%" stop-color="#C5D8EF"/>
+      <stop offset="72%" stop-color="#E7EFEA"/>
+      <stop offset="100%" stop-color="#F7F5EF"/>
+    </linearGradient>
+    <radialGradient id="b" cx="75%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="c" cx="20%" cy="82%" r="45%">
+      <stop offset="0%" stop-color="#7B9C8B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7B9C8B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#a)"/>
+  <rect width="1200" height="1500" fill="url(#b)"/>
+  <rect width="1200" height="1500" fill="url(#c)"/>
+  <path d="M0 980 C300 920 620 1080 1200 1000 L1200 1500 L0 1500 Z" fill="#F8F7F2" fill-opacity="0.65"/>
+  <rect x="72" y="1180" width="72" height="4" rx="2" fill="#2563EB" fill-opacity="0.7"/>
+  <text x="72" y="1248" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#071A2D" fill-opacity="0.72">Ergani 1 No'lu</text>
+  <text x="72" y="1304" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#3D4F61" fill-opacity="0.85">Aile Sağlığı Merkezi</text>
+  <text x="72" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#667382">Tanıtım videosu yakında</text>
+</svg>

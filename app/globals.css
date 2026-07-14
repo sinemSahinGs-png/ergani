@@ -1,26 +1,252 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #071a2d;
+  --deep-navy: #0b2947;
+  --medical-blue: #2563eb;
+  --sky-blue: #bfd8ff;
+  --soft-blue: #eaf3ff;
+  --mist-blue: #f4f8fc;
+  --ivory: #f8f7f2;
+  --pure-white: #ffffff;
+  --sage: #7b9c8b;
+  --soft-sage: #e7efea;
+  --muted-text: #667382;
+  --line: rgba(7, 26, 45, 0.12);
+  --emergency: #d94949;
+
+  /* aliases for migration compatibility */
+  --color-navy: var(--deep-navy);
+  --color-medical: var(--medical-blue);
+  --color-bright: var(--medical-blue);
+  --color-soft-blue: var(--soft-blue);
+  --color-pale-blue: var(--mist-blue);
+  --color-white: var(--pure-white);
+  --color-soft-gray: var(--mist-blue);
+  --color-text-gray: var(--muted-text);
+  --color-dark: var(--ink);
+  --color-success: var(--sage);
+  --color-warning: #c48a3a;
+  --color-emergency: var(--emergency);
+  --color-border: var(--line);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-hero: 40px;
+
+  --shadow-sm: 0 1px 2px rgba(7, 26, 45, 0.04);
+  --shadow-md: 0 8px 30px rgba(7, 26, 45, 0.06);
+  --shadow-lg: 0 24px 60px rgba(7, 26, 45, 0.08);
+  --shadow-header: none;
+
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+
+  --space-section: clamp(5rem, 8vw, 7rem);
+  --space-section-sm: clamp(4rem, 6vw, 5.5rem);
+  --pad-x: clamp(1.25rem, 5vw, 5.5rem);
+  --max-w: 1440px;
+  --header-height: 88px;
+  --sticky-bar-height: 72px;
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-deep-navy: var(--deep-navy);
+  --color-medical-blue: var(--medical-blue);
+  --color-sky-blue: var(--sky-blue);
+  --color-soft-blue: var(--soft-blue);
+  --color-mist-blue: var(--mist-blue);
+  --color-ivory: var(--ivory);
+  --color-sage: var(--sage);
+  --color-soft-sage: var(--soft-sage);
+  --color-muted-text: var(--muted-text);
+  --color-emergency: var(--emergency);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-newsreader);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.011em;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--medical-blue) 18%, white);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--medical-blue);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1.25rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: var(--radius-sm);
+  background: var(--deep-navy);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.container-page {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.section-pad {
+  padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-block: var(--space-section);
+  }
+}
+
+.section-pad-sm {
+  padding-block: var(--space-section-sm);
+}
+
+.pb-sticky-safe {
+  padding-bottom: calc(
+    var(--sticky-bar-height) + env(safe-area-inset-bottom, 0px) + 1rem
+  );
+}
+
+@media (min-width: 1024px) {
+  .pb-sticky-safe {
+    padding-bottom: 0;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 2;
+}
+
+.editorial-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--medical-blue);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(3rem, 13.5vw, 4.125rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: clamp(4.25rem, 7.5vw, 7.375rem);
+    line-height: 1.02;
+  }
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.375rem, 8vw, 3.125rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: clamp(2.625rem, 5vw, 4.75rem);
+  }
+}
+
+.video-mask {
+  border-radius: 24px;
+}
+
+@media (min-width: 1024px) {
+  .video-mask.is-organic {
+    border-radius: 32% 46% 20% 38% / 36% 24% 52% 30%;
+  }
 }
