@@ -1,6 +1,7 @@
-﻿# Place doctor photos here (JPG):
-# - ayse-yilmaz.jpg
-# - mehmet-kaya.jpg
-# - zeynep-demir.jpg
-# - ali-celik.jpg
-# Until then, cards show initials placeholders.
+﻿Place doctor portraits here as:
+- doctor-1.jpg
+- doctor-2.jpg
+- doctor-3.jpg
+- doctor-4.jpg
+
+Until supplied, the UI shows a designed silhouette fallback (no initials circle).

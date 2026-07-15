@@ -1,3 +1,6 @@
+"use client";
+
+import { WordReveal, ParagraphReveal } from "@/components/animations/WordReveal";
 import { cn } from "@/lib/utils";
 
 export function SectionTitle({
@@ -25,11 +28,13 @@ export function SectionTitle({
         )}
         {eyebrow && <p className="editorial-label">{eyebrow}</p>}
       </div>
-      <Tag className="section-title text-balance">{title}</Tag>
+      <WordReveal as={Tag} className="section-title text-balance" text={title} />
       {subtitle && (
-        <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-[var(--muted-text)] md:text-[18px]">
-          {subtitle}
-        </p>
+        <ParagraphReveal
+          className="mt-5 max-w-xl text-[17px] leading-relaxed text-[var(--muted-text)] md:text-[18px]"
+          delay={0.12}
+          text={subtitle}
+        />
       )}
     </div>
   );

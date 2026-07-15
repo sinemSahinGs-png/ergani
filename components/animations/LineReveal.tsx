@@ -89,9 +89,8 @@ export function DrawLine({
   delay?: number;
 }) {
   const reduced = useReducedMotion();
-  const mobile = useIsMobile();
 
-  if (reduced || mobile) {
+  if (reduced) {
     return <div className={cn("h-px bg-[var(--line)]", className)} />;
   }
 

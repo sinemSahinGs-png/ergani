@@ -8,6 +8,7 @@ import {
   getDoctors,
 } from "@/lib/cms";
 import { Button } from "@/components/ui/Button";
+import { MediaFallback } from "@/components/ui/MediaFallback";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { PageShell } from "@/components/layout/PageShell";
 import { contactInfo } from "@/data/contact";
@@ -55,13 +56,15 @@ export default async function DoctorDetailPage({ params }: Props) {
 
           <FadeUp delay={0.08}>
             <div className="grid overflow-hidden border border-[var(--line)] bg-white md:grid-cols-[320px_1fr]">
-              <div className="relative flex aspect-[3/4] flex-col justify-end bg-gradient-to-br from-[var(--soft-blue)] to-[var(--mist-blue)] p-8 md:aspect-auto md:min-h-[480px]">
-                <p className="font-serif text-6xl text-[var(--ink)]/15">
-                  {doctor.initials}
-                </p>
-                <p className="mt-2 text-sm text-[var(--muted-text)]">
-                  {doctor.unit}
-                </p>
+              <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px]">
+                <MediaFallback
+                  type="doctor"
+                  src={doctor.image}
+                  alt={`${doctor.name} portresi`}
+                  label={doctor.unit}
+                  aspectRatio="auto"
+                  className="!aspect-auto absolute inset-0 h-full w-full"
+                />
               </div>
               <div className="p-8 md:p-12">
                 <p className="text-xs font-semibold tracking-[0.16em] text-[var(--medical-blue)] uppercase">

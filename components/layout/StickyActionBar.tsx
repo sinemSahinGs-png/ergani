@@ -35,7 +35,7 @@ export function StickyActionBar() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[color-mix(in_srgb,var(--ivory)_88%,transparent)] backdrop-blur-xl transition-all duration-300 lg:hidden",
+        "fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[color-mix(in_srgb,#ffffff_90%,transparent)] backdrop-blur-xl transition-all duration-300 lg:hidden",
         "pb-[env(safe-area-inset-bottom,0px)]",
         visible
           ? "translate-y-0 opacity-100"

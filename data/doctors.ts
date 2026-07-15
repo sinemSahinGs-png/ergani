@@ -3,12 +3,12 @@ import type { Doctor } from "@/types";
 export const doctors: Doctor[] = [
   {
     id: "1",
-    slug: "ayse-yilmaz",
-    name: "Uzm. Dr. Ayşe Yılmaz",
+    slug: "ahmet-yilmaz",
+    name: "Uzm. Dr. Ahmet Yılmaz",
     title: "Aile Hekimi",
     unit: "1. Birim",
     unitNumber: 1,
-    bio: "Dr. Ayşe Yılmaz, aile hekimliği alanında uzun yıllardır hizmet vermektedir. Bebek ve çocuk izlemleri, gebe takibi ve kronik hastalık yönetiminde deneyimlidir. Hastalarıyla güven temelli, anlaşılır iletişim kurmayı esas alır.",
+    bio: "Dr. Ahmet Yılmaz, aile hekimliği alanında uzun yıllardır hizmet vermektedir. Bebek ve çocuk izlemleri, gebe takibi ve kronik hastalık yönetiminde deneyimlidir. Hastalarıyla güven temelli, anlaşılır iletişim kurmayı esas alır.",
     shortBio:
       "Bebek–çocuk izlemleri ve kronik hastalık takibi alanında deneyimli aile hekimi.",
     workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
@@ -45,12 +45,12 @@ export const doctors: Doctor[] = [
   },
   {
     id: "3",
-    slug: "zeynep-demir",
-    name: "Uzm. Dr. Zeynep Demir",
+    slug: "hasan-demir",
+    name: "Uzm. Dr. Hasan Demir",
     title: "Aile Hekimi",
     unit: "3. Birim",
     unitNumber: 3,
-    bio: "Dr. Zeynep Demir, gebe ve lohusa izlemleri ile kadın sağlığı alanında yoğunlaşmıştır. Aile planlaması danışmanlığı ve rahim ağzı kanseri tarama süreçlerinde hastalarına rehberlik eder.",
+    bio: "Dr. Hasan Demir, gebe ve lohusa izlemleri ile kadın sağlığı alanında yoğunlaşmıştır. Aile planlaması danışmanlığı ve rahim ağzı kanseri tarama süreçlerinde hastalarına rehberlik eder.",
     shortBio:
       "Gebe–lohusa izlemleri ve aile planlaması danışmanlığında deneyimli aile hekimi.",
     workingDays: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
@@ -62,7 +62,7 @@ export const doctors: Doctor[] = [
       "Beslenme danışmanlığı",
     ],
     image: "/images/doctors/doctor-3.jpg",
-    initials: "ZD",
+    initials: "HD",
   },
   {
     id: "4",

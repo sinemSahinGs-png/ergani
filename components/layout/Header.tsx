@@ -21,11 +21,14 @@ export function Header() {
   const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const threshold = isHome ? Math.min(window.innerHeight * 0.75, 520) : 40;
+      setScrolled(window.scrollY > threshold);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     setOpen(false);
@@ -43,16 +46,16 @@ export function Header() {
           "fixed inset-x-0 top-0 z-50 transition-all duration-500",
           transparent
             ? "bg-transparent"
-            : "border-b border-[var(--line)] bg-[color-mix(in_srgb,var(--ivory)_82%,transparent)] backdrop-blur-xl",
+            : "border-b border-[var(--line)] bg-[color-mix(in_srgb,#ffffff_88%,transparent)] backdrop-blur-xl",
         )}
       >
         <div
           className={cn(
             "container-page flex items-center justify-between gap-6 transition-all duration-500",
-            scrolled ? "h-[72px]" : "h-[88px]",
+            scrolled ? "h-[68px]" : "h-[72px] md:h-[80px]",
           )}
         >
-          <Logo compact={scrolled} />
+          <Logo compact={scrolled} light={transparent} />
 
           <nav
             className="hidden items-center gap-1 xl:flex"
@@ -69,9 +72,13 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "relative px-3.5 py-2 text-[13px] font-semibold tracking-wide transition-colors",
-                    active
-                      ? "text-[var(--medical-blue)]"
-                      : "text-[var(--ink)]/75 hover:text-[var(--ink)]",
+                    transparent
+                      ? active
+                        ? "text-[var(--sky-blue)]"
+                        : "text-white/80 hover:text-white"
+                      : active
+                        ? "text-[var(--medical-blue)]"
+                        : "text-[var(--ink)]/75 hover:text-[var(--ink)]",
                   )}
                 >
                   <span className="relative overflow-hidden">
@@ -83,13 +90,18 @@ export function Header() {
                       )}
                     />
                   </span>
-                  {active && (
-                    <motion.span
-                      layoutId="nav-line"
-                      className="absolute inset-x-3.5 -bottom-0.5 h-px bg-[var(--medical-blue)]"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  )}
+                      {active && (
+                        <motion.span
+                          layoutId="nav-line"
+                          className={cn(
+                            "absolute inset-x-3.5 -bottom-0.5 h-px",
+                            transparent
+                              ? "bg-[var(--sky-blue)]"
+                              : "bg-[var(--medical-blue)]",
+                          )}
+                          transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                        />
+                      )}
                 </Link>
               );
             })}
@@ -101,7 +113,12 @@ export function Header() {
                 href={contactInfo.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--ink)]/15 bg-[var(--pure-white)]/70 px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] backdrop-blur-sm transition-colors hover:border-[var(--medical-blue)]/40 hover:text-[var(--medical-blue)]"
+                className={cn(
+                  "group inline-flex items-center gap-2 rounded-[var(--radius-md)] border px-4 py-2.5 text-[13px] font-semibold backdrop-blur-sm transition-colors",
+                  transparent
+                    ? "border-white/30 bg-white/10 text-white hover:border-white/55 hover:bg-white/20"
+                    : "border-[var(--ink)]/15 bg-white/70 text-[var(--ink)] hover:border-[var(--medical-blue)]/40 hover:text-[var(--medical-blue)]",
+                )}
               >
                 <MapPin className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
                 Yol Tarifi
@@ -110,7 +127,12 @@ export function Header() {
 
             <button
               type="button"
-              className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--pure-white)]/80 text-[var(--ink)] backdrop-blur-sm xl:hidden"
+              className={cn(
+                "relative inline-flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-sm xl:hidden",
+                transparent
+                  ? "border-white/30 bg-white/10 text-white"
+                  : "border-[var(--line)] bg-white/80 text-[var(--ink)]",
+              )}
               aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
               aria-expanded={open}
               aria-controls="mobile-menu"

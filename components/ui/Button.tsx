@@ -32,7 +32,7 @@ type Props = AsButton | AsLink;
 
 const sizeCls: Record<Size, string> = {
   md: "min-h-12 px-6 text-[15px]",
-  lg: "min-h-14 px-8 text-base",
+  lg: "min-h-[52px] px-8 text-[16px] md:min-h-14",
 };
 
 export function Button(props: Props) {
@@ -47,7 +47,7 @@ export function Button(props: Props) {
   } = props;
 
   const base =
-    "group relative inline-flex items-center justify-center gap-2.5 overflow-hidden font-semibold tracking-tight transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--medical-blue)] active:scale-[0.985] disabled:opacity-55 disabled:pointer-events-none rounded-[var(--radius-md)]";
+    "group relative inline-flex items-center justify-center gap-2.5 overflow-hidden font-semibold tracking-tight transition-all duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--medical-blue)] active:scale-[0.97] disabled:opacity-55 disabled:pointer-events-none rounded-[var(--radius-md)]";
 
   const variants: Record<Variant, string> = {
     primary:

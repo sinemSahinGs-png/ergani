@@ -15,6 +15,7 @@ Herhangi bir endişeniz olduğunda beklemeden aile hekiminize başvurunuz.`,
     category: "bebek-sagligi",
     categoryLabel: "Bebek Sağlığı",
     readingTime: 4,
+    image: "/images/health/baby-health.jpg",
     publishedAt: "2026-03-12",
   },
   {
@@ -31,6 +32,7 @@ Kanama, şiddetli karın ağrısı veya su gelmesi gibi acil belirtilerde 112’
     category: "gebelik",
     categoryLabel: "Gebelik",
     readingTime: 5,
+    image: "/images/health/baby-health.jpg",
     publishedAt: "2026-03-05",
   },
   {
@@ -47,6 +49,7 @@ Aşı sonrası hafif ateş veya lokal şişlik görülebilir; şiddetli reaksiyo
     category: "asilar",
     categoryLabel: "Aşılar",
     readingTime: 4,
+    image: "/images/health/vaccination.jpg",
     publishedAt: "2026-02-20",
   },
   {
@@ -63,6 +66,7 @@ Ani göğüs ağrısı, bilinç bulanıklığı veya çok yüksek–çok düşü
     category: "kronik-hastaliklar",
     categoryLabel: "Kronik Hastalıklar",
     readingTime: 5,
+    image: "/images/health/chronic-disease.jpg",
     publishedAt: "2026-02-10",
   },
   {

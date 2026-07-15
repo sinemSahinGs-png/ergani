@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import type { Doctor } from "@/types";
 import { Button } from "@/components/ui/Button";
+import { MediaFallback } from "@/components/ui/MediaFallback";
 import { cn } from "@/lib/utils";
 
 export function DoctorCard({
@@ -12,8 +12,6 @@ export function DoctorCard({
   doctor: Doctor;
   className?: string;
 }) {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <article
       className={cn(
@@ -21,37 +19,27 @@ export function DoctorCard({
         className,
       )}
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-[var(--soft-blue)] to-[var(--mist-blue)]">
-        {!imgError ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={doctor.image}
-            alt={`${doctor.name} profil fotoğrafı`}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="flex h-full w-full flex-col justify-end p-6">
-            <p className="font-serif text-5xl text-[var(--ink)]/15">
-              {doctor.initials}
-            </p>
-            <p className="mt-1 text-xs text-[var(--muted-text)]">
-              Portre yakında
-            </p>
-          </div>
-        )}
-        <span className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-[var(--ink)] backdrop-blur-sm">
+      <div className="relative overflow-hidden">
+        <MediaFallback
+          type="doctor"
+          src={doctor.image}
+          alt={`${doctor.name} profil fotoğrafı`}
+          label={doctor.unit}
+          aspectRatio="4 / 5"
+          className="transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <span className="absolute top-4 left-4 z-[3] bg-white/90 px-3 py-1 text-[12px] font-semibold tracking-wide text-[var(--ink)] backdrop-blur-sm">
           {doctor.unit}
         </span>
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-serif text-2xl leading-tight tracking-tight text-[var(--ink)]">
+        <h3 className="font-serif text-[clamp(1.35rem,3vw,1.75rem)] leading-tight tracking-tight text-[var(--ink)]">
           {doctor.name}
         </h3>
-        <p className="mt-1 text-sm font-medium text-[var(--medical-blue)]">
+        <p className="mt-1 text-[14px] font-medium text-[var(--medical-blue)]">
           {doctor.title}
         </p>
-        <p className="mt-4 flex-1 text-[15px] leading-relaxed text-[var(--muted-text)]">
+        <p className="mt-4 flex-1 text-[16px] leading-relaxed text-[var(--muted-text)]">
           {doctor.shortBio}
         </p>
         <div className="mt-6">
